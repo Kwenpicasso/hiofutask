@@ -9,16 +9,21 @@ import { Spinner } from "@/components/ui/spinner";
 import { usePostsStore } from "@/store/usePostsStore";
 import Link from "next/link";
 
+
+type Post = {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+};
 export default function PostDetails({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
-  // ✅ unwrap the params Promise using React.use()
   const { id } = use(params);
-
   const { posts, fetchPosts, loading } = usePostsStore();
-  const [post, setPost] = useState<any>(null);
+  const [post, setPost] = useState<Post | null>(null);
 
   useEffect(() => {
     const existingPost = posts.find((p) => p.id === Number(id));
@@ -30,7 +35,7 @@ export default function PostDetails({
         const updated = usePostsStore
           .getState()
           .posts.find((p) => p.id === Number(id));
-        setPost(updated);
+          setPost(updated || null);
       });
     }
   }, [id, posts, fetchPosts]);

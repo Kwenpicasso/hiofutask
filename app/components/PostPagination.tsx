@@ -28,7 +28,6 @@ export function PostPagination({
   return (
     <Pagination>
       <PaginationContent>
-        {/* Previous Button */}
         <PaginationItem>
           <PaginationPrevious
             href="#"

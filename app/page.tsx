@@ -13,16 +13,14 @@ export default function Home() {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 4;
   const { posts, fetchPosts, search, setSearch, loading } = usePostsStore();
-  // Fetch posts whenever search changes
   useEffect(() => {
     fetchPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
-
   // Filter posts by search term (from store)
   const filteredPosts = posts.filter((post) =>
     post.title.toLowerCase().includes(search.toLowerCase())
   );
-console.log(posts)
   // Pagination logic
   const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
   const indexOfLastPost = currentPage * postsPerPage;
