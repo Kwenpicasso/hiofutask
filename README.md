@@ -101,7 +101,7 @@ API Limitations: JSONPlaceholder is mock data only — a real backend would supp
 
 Testing: With more time, unit and integration tests could be added (e.g., Jest + React Testing Library).
 
-##🌍 Deployment
+## 🌍 Deployment
 
 You can easily deploy this app using Vercel:
 ```bash
