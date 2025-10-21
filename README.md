@@ -105,5 +105,5 @@ Testing: With more time, unit and integration tests could be added (e.g., Jest +
 
 You can easily deploy this app using Vercel:
 ```bash
-vercel
+https://hiofutask.vercel.app/
 ```
